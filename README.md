@@ -13,7 +13,7 @@ Include a list of apt package names to be installed in a file named `Aptfile`
 #### Command-line
 
 ```
-heroku buildpacks:add --index 1 https://github.com/heroku/heroku-buildpack-apt
+heroku buildpacks:add --index 1 https://github.com/gazalk/heroku-buildpack-apt.git
 ```
 
 #### Aptfile
