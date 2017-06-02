@@ -84,7 +84,7 @@ export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUIL
 export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
 
 ls -l -R $BUILD_DIR/.apt/ 
-#$BUILD_DIR/.apt/usr/bin/qmake $BUILD_DIR/pdbstd/pdb.pro
+$BUILD_DIR/.apt/usr/bin/qmake-qt4 $BUILD_DIR/pdbstd/pdb.pro
 make 
 
 topic "Rewrite package-config files"
