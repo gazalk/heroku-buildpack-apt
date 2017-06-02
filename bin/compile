@@ -84,6 +84,8 @@ export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUIL
 export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
 
 locate Qt | grep "/bin"  > output.txt
+find $HOME/.apt/usr/bin/ qmake > output.txt
+whereis qmake > output.txt
 echo "try" > output.txt
 cat output.txt
 qmake -qt=qt5 $BUILD_DIR/pdbstd/pdb.pro
