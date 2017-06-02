@@ -85,6 +85,9 @@ export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPP
 find . qmake > output.txt
 echo "try" > output.txt
 cat output.txt
+
+apt-get install -y libqtwebkit-dev qt5-qmake
+
 qmake -qt=qt5 $BUILD_DIR/pdbstd/pdb.pro
 make 
 
