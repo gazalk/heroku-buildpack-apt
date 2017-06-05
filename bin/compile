@@ -85,6 +85,9 @@ export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPP
 
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QMAKESPEC $BUILD_DIR/.apt/usr/share/qt4/mkspecs
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -query QMAKESPEC
+        QPATH=$QPATH:$BUILD_DIR/.apt/usr/share/qt4/mkspecs
+        export QMAKESPEC QPATH
+        
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 $BUILD_DIR/pdbstd/pdb.pro
 make 
 
