@@ -83,10 +83,10 @@ export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUIL
 #give environment to later buildpacks
 export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
 
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QMAKESPEC $BUILD_DIR/.apt/usr/share/qt4/mkspecs/linux-g++/
+$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QMAKESPEC $BUILD_DIR/.apt/usr/share/qt4/mkspecs/linux-g++/qmake.conf
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -query 
         
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -spec $BUILD_DIR/.apt/usr/share/qt4/mkspecs/linux-g++ $BUILD_DIR/pdbstd/pdb.pro
+$BUILD_DIR/.apt/usr/bin/qmake-qt4 $BUILD_DIR/pdbstd/pdb.pro
 make 
 
 topic "Rewrite package-config files"
