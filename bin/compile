@@ -89,7 +89,7 @@ echo -e  "[Paths] \n Prefix = $var1 \n Headers=include/qt5 \n Libraries = lib/x8
 cat $BUILD_DIR/.apt/usr/bin/qt.conf
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -query 
        
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -spec $BUILD_DIR/.apt/usr/share/qt5/mkspecs/linux-g++ $BUILD_DIR/pdbstd/pdb.pro
+$BUILD_DIR/.apt/usr/bin/qmake-qt4 -spec $BUILD_DIR/.apt/usr/share/qt4/mkspecs/linux-g++ $BUILD_DIR/pdbstd/pdb.pro
 make 
 
 topic "Rewrite package-config files"
