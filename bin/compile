@@ -86,7 +86,7 @@ export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPP
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QMAKESPEC $BUILD_DIR/.apt/usr/share/qt4/mkspecs/linux-g++
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -query QMAKESPEC
         
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 $BUILD_DIR/pdbstd/pdb.pro
+$BUILD_DIR/.apt/usr/bin/qmake-qt4 -spec $BUILD_DIR/.apt/usr/share/qt4/mkspecs/linux-g++ $BUILD_DIR/pdbstd/pdb.pro
 make 
 
 topic "Rewrite package-config files"
