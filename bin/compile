@@ -83,7 +83,7 @@ export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUIL
 #give environment to later buildpacks
 export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
 
-var1="$BUILD_DIR/.apt/usr/bin/qmake-qt4"
+var1="$BUILD_DIR/.apt/"
 echo -e  "[Paths] \n Prefix = $var1" > $BUILD_DIR/.apt/usr/bin/qt.conf 
 cat $BUILD_DIR/.apt/usr/bin/qt.conf
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -query 
