@@ -85,7 +85,7 @@ export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPP
 
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -query 
 var1="$BUILD_DIR/.apt/usr/"
-echo -e  "[Paths] \n Prefix = $var1 \n Headers=include/qt4 \n Libraries = lib/x86_64-linux-gnu \n binaries = bin" > $BUILD_DIR/.apt/usr/bin/qt.conf 
+echo -e  "[Paths] \n Prefix = $var1 \n Headers=include/qt4 \n Libraries = lib/x86_64-linux-gnu \n binaries = lib/x86_64-linux-gnu/bin" > $BUILD_DIR/.apt/usr/bin/qt.conf 
 cat $BUILD_DIR/.apt/usr/bin/qt.conf
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -query 
        
