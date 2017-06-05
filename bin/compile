@@ -83,20 +83,9 @@ export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUIL
 #give environment to later buildpacks
 export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
 
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QMAKE_MKSPEC $BUILD_DIR/.apt/usr/share/qt4/mkspecs/linux-g++
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_DEMOS $BUILD_DIR/.apt/usr/lib/qt4/demos
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_EXAMPLES $BUILD_DIR/.apt/usr/lib/qt4/examples
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_CONFIGURATION $BUILD_DIR/.apt/etc/xdg
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_TRANSLATIONS $BUILD_DIR/.apt/usr/share/qt4/translations
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_IMPORTS $BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/qt4/imports
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_PLUGINS $BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/qt4/plugins
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_BINS $BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/qt4/bin
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_LIBS $BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_HEADERS $BUILD_DIR/.apt/usr/usr/include/qt4
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_DOCS $BUILD_DIR/.apt/usr/share/qt4/doc
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_DATA $BUILD_DIR/.apt/usr/share/qt4
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_PREFIX $BUILD_DIR/.apt/usr
-
+$qmake = $BUILD_DIR/.apt/usr/bin/qmake-qt4
+echo -e  "[Paths] \n Prefix = $qmake" > $BUILD_DIR/.apt/usr/bin/qt.conf 
+cat $BUILD_DIR/.apt/usr/bin/qt.conf
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -query 
        
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -spec $BUILD_DIR/.apt/usr/share/qt4/mkspecs/linux-g++ $BUILD_DIR/pdbstd/pdb.pro
