@@ -99,7 +99,7 @@ $BUILD_DIR/.apt/usr/bin/qmake-qt4 -set QT_INSTALL_PREFIX $BUILD_DIR/.apt/usr
 
 $BUILD_DIR/.apt/usr/bin/qmake-qt4 -query 
        
-$BUILD_DIR/.apt/usr/bin/qmake-qt4 $BUILD_DIR/pdbstd/pdb.pro
+$BUILD_DIR/.apt/usr/bin/qmake-qt4 -spec $BUILD_DIR/.apt/usr/share/qt4/mkspecs/linux-g++ $BUILD_DIR/pdbstd/pdb.pro
 make 
 
 topic "Rewrite package-config files"
